@@ -180,11 +180,6 @@ class QuerySubstrate:
         }
     }
 
-    def __init__(self,substrate_ac,site_residue,site_position):
-        self.substrate_ac = substrate_ac
-        self.site_residue = site_residue
-        self.site_position = site_position
-
 
 class BatchPTMEnzyme:
 
