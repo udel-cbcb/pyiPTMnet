@@ -18,12 +18,15 @@ class IPTMnetTest(unittest.TestCase):
     # setup
     def setUp(self):
         super().setUp()
+        api.set_host_url("http://127.0.0.1:8080")
 
     # test search
     def test_search(self):
-        search_results = api.search("smad2",models.Termtype.ProteinGeneName,models.Role.EnzymeOrSubstrate)
-        self.assertTrue(len(search_results) != 0)
-        validate_items(search_results,models.SearchResult.schema)
+        search_results_df = api.search("smad2",models.Termtype.ProteinGeneName,models.Role.EnzymeOrSubstrate)
+        self.assertTrue(len(search_results_df.index) != 0)
+
+        search_results_dict = api.search("smad2", models.Termtype.ProteinGeneName, models.Role.EnzymeOrSubstrate,dict=True)
+        validate_items(search_results_dict,models.SearchResult.schema)
 
     # test get info
     def test_get_info(self):
@@ -32,21 +35,32 @@ class IPTMnetTest(unittest.TestCase):
         jsonschema.validate(info, models.Info.schema)
 
     # test get proteoforms
+    def test_get_substrates(self):
+        proteoforms_df = api.get_substrates("Q15796")
+        self.assertTrue(len(proteoforms_df.index) != 0)
+
+    # test get proteoforms
     def test_get_proteoforms(self):
-        proteoforms = api.get_proteoforms("Q15796")
-        self.assertTrue(len(proteoforms) != 0)
-        validate_items(proteoforms,models.Proteoform.schema)
+        proteoforms_df = api.get_proteoforms("Q15796")
+        self.assertTrue(len(proteoforms_df.index) != 0)
+
+        proteoforms_dict = api.get_proteoforms("Q15796",dict=True)
+        validate_items(proteoforms_dict,models.Proteoform.schema)
 
     # test get ptm ppi
     def test_get_ptm_ppi(self):
-        ptm_ppi = api.get_ptm_dependent_ppi("Q15796")
-        self.assertTrue(len(ptm_ppi) != 0)
-        validate_items(ptm_ppi,models.PTMPPI.schema)
+        ptm_ppi_df = api.get_ptm_dependent_ppi("Q15796")
+        self.assertTrue(len(ptm_ppi_df.index) != 0)
+
+        ptm_ppi_dict = api.get_ptm_dependent_ppi("Q15796",dict=True)
+        validate_items(ptm_ppi_dict,models.PTMPPI.schema)
 
     # test get ppi for proteoforms
     def test_get_ppi_for_proteoforms(self):
-        ptm_ppi = api.get_ppi_for_proteoforms("Q15796")
-        self.assertTrue(len(ptm_ppi) != 0)
+        ptm_ppi_df = api.get_ppi_for_proteoforms("Q15796")
+        self.assertTrue(len(ptm_ppi_df.index) != 0)
+
+        ptm_ppi = api.get_ppi_for_proteoforms("Q15796",dict=True)
         validate_items(ptm_ppi,models.ProteoformPPI.schema)
 
     # test get ptm enzymes from list
