@@ -82,15 +82,18 @@ class IPTMnetTest(unittest.TestCase):
             },
         ]
 
-        enzymes = api.get_ptm_enzymes_from_list(substrates)
-        self.assertTrue(len(enzymes) != 0)
-        validate_items(enzymes,models.BatchPTMEnzyme.schema)
+        enzymes_df = api.get_ptm_enzymes_from_list(substrates)
+        self.assertTrue(len(enzymes_df) != 0)
+
+        enzymes_dict = api.get_ptm_enzymes_from_list(substrates,dict=True)
+        self.assertTrue(len(enzymes_dict) != 0)
+        validate_items(enzymes_dict,models.BatchPTMEnzyme.schema)
 
     # test get ptm enzymes from file
     def test_get_ptm_enzymes_from_file(self):
-        enzymes = api.get_ptm_enzymes_from_file("egfr_sites_formatted.txt")
-        self.assertTrue(len(enzymes) != 0)
-        validate_items(enzymes,models.BatchPTMEnzyme.schema)
+        enzymes = api.get_ptm_enzymes_from_file("egfr_sites_formatted_long.txt",dict=True)
+        len_enz = len(enzymes)
+        self.assertTrue(len_enz != 0)
 
     # test get ptm enzymes from list
     def test_get_ptm_ppi_from_list(self):
@@ -121,12 +124,14 @@ class IPTMnetTest(unittest.TestCase):
             },
         ]
 
-        enzymes = api.get_ptm_ppi_from_list(substrates)
-        self.assertTrue(len(enzymes) != 0)
-        validate_items(enzymes,models.BatchPTMPPI.schema)
+        enzymes_df = api.get_ptm_ppi_from_list(substrates)
+        self.assertTrue(len(enzymes_df) != 0)
+
+        enzymes_dict = api.get_ptm_ppi_from_list(substrates,dict=True)
+        self.assertTrue(len(enzymes_dict) != 0)
+        validate_items(enzymes_dict,models.BatchPTMPPI.schema)
 
     # test get ptm enzymes from file
     def test_get_ptm_ppi_from_file(self):
-        enzymes = api.get_ptm_ppi_from_file("egfr_sites_formatted.txt")
+        enzymes = api.get_ptm_ppi_from_file("egfr_sites_formatted_long.txt")
         self.assertTrue(len(enzymes) != 0)
-        validate_items(enzymes,models.BatchPTMPPI.schema)
