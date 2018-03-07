@@ -57,7 +57,7 @@ iptmnet.api.search("smad2", Termtype.ProteinGeneName, Role.EnzymeOrSubstrate)
 Type : `dataframe`
 
 iptm_id | protein_name | gene_name | synonyms | organism_taxon_code | organism_species | organism_common_name | substrate_role | substrate_num | enzyme_role | enzyme_num | ptm_dependent_ppi_role | ptm_dep_ppi_num | sites | isoforms
---- | --- | ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
+--- | --- | ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
 O70436 | Mothers against decapentaplegic homolog 2; | Smad2 | Madh2 | 10116 | Rattus norvegicus | Rat | True | 0 | False | 0 | False | 0 | 6 | 0
 Q1W668 | Mothers against decapentaplegic homolog 2; | SMAD2 |  | 9913 | Bos taurus | Bovine | True | 0 | False | 0 | False | 0 | 4 | 0
 
