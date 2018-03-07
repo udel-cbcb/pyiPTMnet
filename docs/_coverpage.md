@@ -5,7 +5,7 @@
 * Simple, lightweight and easy to use
 
 
-[GitHub](https://github.com/QingWei-Li/docsify/)
+[GitHub](https://github.com/Sachinx0e/pyiptmnet)
 [Get Started](#pyiptmnet)
 
 
