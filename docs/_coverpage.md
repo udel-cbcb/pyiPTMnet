@@ -8,5 +8,5 @@
 [GitHub](https://github.com/Sachinx0e/pyiptmnet)
 [Get Started](#pyiptmnet)
 
-![color](linear-gradient(to left bottom, #b3baff 0%, #b3ffd4 100%))
+![color](linear-gradient(to left bottom, #b8b3ff 0%, #ffdbb3 100%))
 
