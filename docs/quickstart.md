@@ -62,7 +62,7 @@ O70436 | Mothers against decapentaplegic homolog 2; | Smad2 | Madh2 | 10116 | Ra
 Q1W668 | Mothers against decapentaplegic homolog 2; | SMAD2 |  | 9913 | Bos taurus | Bovine | True | 0 | False | 0 | False | 0 | 4 | 0
 
 ## Bulk
-To perform a bulk query for ptm enzymes on the database with a list of PTM sites in a csv file - `sites.csv` you can use `get_ptm_enzymes_from_list` function.
+To perform a bulk query for ptm enzymes on the database with a list of PTM sites in a csv file - `sites.csv` you can use `get_ptm_enzymes_from_file` function.
 
 ``` python
 # imports
@@ -70,7 +70,7 @@ import iptmnet.api as api
 import * from iptmnet.enums
 
 # search the database
-iptmnet.api.get_ptm_enzymes_from_list("sites.csv")
+iptmnet.api.get_ptm_enzymes_from_file("sites.csv")
 ```
 ##### Result 
 Type : `dataframe`
