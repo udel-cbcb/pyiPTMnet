@@ -1,6 +1,6 @@
 import unittest
-import iptmnet.api as api
-from iptmnet.enums import *
+import pyiptmnet.api as api
+from pyiptmnet.enums import *
 import jsonschema
 
 
@@ -32,7 +32,7 @@ class IPTMnetTest(unittest.TestCase):
     def test_get_info(self):
         info = api.get_info("Q15796")
         self.assertIsNotNone(info)
-        jsonschema.validate(info, enums.Info.schema)
+        jsonschema.validate(info, Info.schema)
 
     # test get proteoforms
     def test_get_substrates(self):
@@ -45,7 +45,7 @@ class IPTMnetTest(unittest.TestCase):
         self.assertTrue(len(proteoforms_df.index) != 0)
 
         proteoforms_dict = api.get_proteoforms("Q15796",dict=True)
-        validate_items(proteoforms_dict, enums.Proteoform.schema)
+        validate_items(proteoforms_dict, Proteoform.schema)
 
     # test get ptm ppi
     def test_get_ptm_ppi(self):
@@ -53,7 +53,7 @@ class IPTMnetTest(unittest.TestCase):
         self.assertTrue(len(ptm_ppi_df.index) != 0)
 
         ptm_ppi_dict = api.get_ptm_dependent_ppi("Q15796",dict=True)
-        validate_items(ptm_ppi_dict, enums.PTMPPI.schema)
+        validate_items(ptm_ppi_dict, PTMPPI.schema)
 
     # test get ppi for proteoforms
     def test_get_ppi_for_proteoforms(self):
@@ -61,7 +61,7 @@ class IPTMnetTest(unittest.TestCase):
         self.assertTrue(len(ptm_ppi_df.index) != 0)
 
         ptm_ppi = api.get_ppi_for_proteoforms("Q15796",dict=True)
-        validate_items(ptm_ppi, enums.ProteoformPPI.schema)
+        validate_items(ptm_ppi, ProteoformPPI.schema)
 
     # test get ptm enzymes from list
     def test_get_ptm_enzymes_from_list(self):
@@ -87,7 +87,7 @@ class IPTMnetTest(unittest.TestCase):
 
         enzymes_dict = api.get_ptm_enzymes_from_list(substrates,dict=True)
         self.assertTrue(len(enzymes_dict) != 0)
-        validate_items(enzymes_dict, enums.BatchPTMEnzyme.schema)
+        validate_items(enzymes_dict, BatchPTMEnzyme.schema)
 
     # test get ptm enzymes from file
     def test_get_ptm_enzymes_from_file(self):
@@ -129,7 +129,7 @@ class IPTMnetTest(unittest.TestCase):
 
         enzymes_dict = api.get_ptm_ppi_from_list(substrates,dict=True)
         self.assertTrue(len(enzymes_dict) != 0)
-        validate_items(enzymes_dict, enums.BatchPTMPPI.schema)
+        validate_items(enzymes_dict, BatchPTMPPI.schema)
 
     # test get ptm enzymes from file
     def test_get_ptm_ppi_from_file(self):

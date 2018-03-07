@@ -5,12 +5,11 @@ The API consists of functions that mirror the functionality of the iPTMNet rest 
 ## Info
 Retriving information for an entry with an iPTMnet ID - `Q15796`
 ``` python
-# imports
-import iptmnet.api as api
-import * from iptmnet.enums
+#imports
+import pyiptmnet.api as api
 
 # get the information for Q15796 
-iptmnet.api.get_info("Q15796")
+api.get_info("Q15796")
 ```
 
 ##### Result
@@ -45,19 +44,19 @@ Type : `dictionary`
 To search the iPTMnet database for entries related to the gene `smad2`, you can use the `search` function as follows.
 
 ``` python
-# imports
-import iptmnet.api as api
-import * from iptmnet.enums
+#imports
+import pyiptmnet.api as api
+from pyiptmnet.enums import *
 
 # search the database
-iptmnet.api.search("smad2", Termtype.ProteinGeneName, Role.EnzymeOrSubstrate)
+api.search("smad2", Termtype.ProteinGeneName, Role.EnzymeOrSubstrate)
 ```
 
 ##### Result 
 Type : `dataframe`
 
 iptm_id | protein_name | gene_name | synonyms | organism_taxon_code | organism_species | organism_common_name | substrate_role | substrate_num | enzyme_role | enzyme_num | ptm_dependent_ppi_role | ptm_dep_ppi_num | sites | isoforms
---- | --- | ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+--- | --- | ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
 O70436 | Mothers against decapentaplegic homolog 2; | Smad2 | Madh2 | 10116 | Rattus norvegicus | Rat | True | 0 | False | 0 | False | 0 | 6 | 0
 Q1W668 | Mothers against decapentaplegic homolog 2; | SMAD2 |  | 9913 | Bos taurus | Bovine | True | 0 | False | 0 | False | 0 | 4 | 0
 
@@ -65,13 +64,14 @@ Q1W668 | Mothers against decapentaplegic homolog 2; | SMAD2 |  | 9913 | Bos taur
 To perform a bulk query for ptm enzymes on the database with a list of PTM sites in a csv file - `sites.csv` you can use `get_ptm_enzymes_from_file` function.
 
 ``` python
-# imports
-import iptmnet.api as api
-import * from iptmnet.enums
+#imports
+import pyiptmnet.api as api
+from pyiptmnet.enums import *
 
 # search the database
-iptmnet.api.get_ptm_enzymes_from_file("sites.csv")
+api.get_ptm_enzymes_from_file("sites.csv")
 ```
+
 ##### Result 
 Type : `dataframe`
 
@@ -80,7 +80,3 @@ ptm_type | site | site_position | score | source | pmid | enz_name | enz_id | su
 Phosphorylation | S2 | 2 | 2 | HPRD | 8898866,20068231 | PRKCB | P05771 | ANXA2 | P07355 
 Phosphorylation | S7 | 7 | 4 | HPRD,neXtPro | 20166139,12773393,20089855,17924679,11438671 | RPS6KA5 | O75582 | HMGN1 | P05114 
 Phosphorylation | T60 | 60 | 4 | neXtProt,PSP | 21355052,16081417 | SGK1 | O00141 | WNK1 | Q9H4A3
-
-
-
-

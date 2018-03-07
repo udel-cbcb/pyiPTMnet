@@ -1,4 +1,4 @@
-# pyIPTMnet <small>0.1</small>
+# PyiPTMnet <small>0.1</small>
 
 > A python client library for iPTMnet database
 
@@ -8,6 +8,5 @@
 [GitHub](https://github.com/Sachinx0e/pyiptmnet)
 [Get Started](#pyiptmnet)
 
-
-![color](linear-gradient(to left bottom, #b3ffc8 0%, #eeffb3 100%))
+![color](linear-gradient(to left bottom, #b3baff 0%, #b3ffd4 100%))
 
