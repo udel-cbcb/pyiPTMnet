@@ -1,28 +1,19 @@
-* Getting started
+* Quick start
+  * [Info](quickstart.md#Info)
+  * [Search](quickstart.md#Search)
+  * [Bulk](quickstart.md#Bulk)
 
-  * [Quick start](quickstart.md)
-  * [Writing more pages](more-pages.md)
-  * [Custom navbar](custom-navbar.md)
-  * [Cover page](cover.md)
-
-* Customization
-
-  * [Configuration](configuration.md)
-  * [Themes](themes.md)
-  * [List of Plugins](plugins.md)
-  * [Write a Plugin](write-a-plugin.md)
-  * [Markdown configuration](markdown.md)
-  * [Language highlighting](language-highlight.md)
-
-* Guide
-
-  * [Deploy](deploy.md)
-  * [Helpers](helpers.md)
-  * [Vue compatibility](vue.md)
-  * [CDN](cdn.md)
-  * [Offline Mode(PWA)](pwa.md)
-  * [Server-Side Rendering(SSR)](ssr.md)
-  * [Embed Files <sup style="color:red">(new)<sup>](embed-files.md)
-
-* [Awesome docsify](awesome.md)
-* [Changelog](changelog.md)
+* API
+  * [search](api.md)
+  * [get_info](api.md)
+  * [get_msa](api.md)
+  * [get_substrates](api.md)
+  * [get_proteoforms](api.md)
+  * [get_ptm_dependent_ppi](api.md)
+  * [get_ppi_for_proteoforms](api.md)
+  * [get_ptm_enzymes_from_list](api.md)
+  * [get_ptm_enzymes_from_file](api.md)
+  * [get_ptm_ppi_from_list](api.md)
+  * [get_ptm_ppi_from_file](api.md)
+  * [set_host_url](api.md)
+  

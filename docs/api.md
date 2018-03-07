@@ -2,7 +2,7 @@
 
 The API consists of functions that mirror the functionality of the iPTMNet rest api.
 
-## Info
+## Single entry
 Retriving information for an entry with an iPTMnet ID - `Q15796`
 ``` python
 # imports
@@ -42,7 +42,7 @@ Type : `dictionary`
 
 
 ## Search
-To search the iPTMnet database for entries related to the gene `smad2`, you can use the `search` function as follows.
+Searching the iPTMnet database for entries related to the gene `smad2`, you can use the `search` function as follows.
 
 ``` python
 # imports
@@ -62,7 +62,7 @@ O70436 | Mothers against decapentaplegic homolog 2; | Smad2 | Madh2 | 10116 | Ra
 Q1W668 | Mothers against decapentaplegic homolog 2; | SMAD2 |  | 9913 | Bos taurus | Bovine | True | 0 | False | 0 | False | 0 | 4 | 0
 
 ## Bulk
-To perform a bulk query for ptm enzymes on the database with a list of PTM sites in a csv file - `sites.csv` you can use `get_ptm_enzymes_from_list` function.
+Querying the database with a list of PTM sites in a csv file - `sites.csv`
 
 ``` python
 # imports
