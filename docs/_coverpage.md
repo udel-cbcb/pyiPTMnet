@@ -4,9 +4,6 @@
 
 * Simple, lightweight and easy to use
 
-```
-pip install pyiptmnet
-```
 
 [GitHub](https://github.com/QingWei-Li/docsify/)
 [Get Started](#pyiptmnet)
