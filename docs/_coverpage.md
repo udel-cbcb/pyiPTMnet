@@ -5,7 +5,7 @@
 * Simple, lightweight and easy to use
 
 
-[GitHub](https://github.com/Sachinx0e/pyiptmnet)
+[GitHub](https://github.com/udel-cbcb/pyiptmnet)
 [Get Started](#pyiptmnet)
 
 ![color](linear-gradient(to left bottom, #b8b3ff 0%, #ffdbb3 100%))

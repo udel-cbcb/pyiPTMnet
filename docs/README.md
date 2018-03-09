@@ -18,7 +18,7 @@ pip install pyiptmnet
 
 #### Install from github
 ``` python
-pip install git+https://github.com/sachinx0e/pyiptmnet.git
+pip install git+https://github.com/udel-cbcb/pyiptmnet.git
 ```
 
 
