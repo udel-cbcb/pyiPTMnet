@@ -10,8 +10,7 @@ See the [Quick start](quickstart.md) for more details.
 
 ## Installation
 
-#### Install from PyPy
-> PyPy package is not live yet, but when it will be live you can use the following command
+#### Install from PyPi
 ``` python
 pip install pyiptmnet
 ```
