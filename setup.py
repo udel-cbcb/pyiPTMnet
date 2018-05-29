@@ -7,7 +7,7 @@ setup(
   author = 'Sachn Gavali',
   author_email = 'saching@udel.edu',
   url = 'https://github.com/udel-cbcb/pyiptmnet', # use the URL to the github repo
-  download_url = 'https://github.com/udel-cbcb/pyiptmnet/archive/0.1.tar.gz', # I'll explain this in a second
+  download_url = 'https://github.com/udel-cbcb/pyiptmnet/archive/0.1.1.tar.gz', # I'll explain this in a second
   keywords = ['iPTMnet', 'API', 'Client', 'REST-API'], # arbitrary keywords
   classifiers = [],
 )
