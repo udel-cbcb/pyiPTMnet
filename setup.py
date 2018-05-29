@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'pyiptmnet',
   packages = ['pyiptmnet'], # this must be the same as the name above
-  version = '0.1',
+  version = '0.1.1',
   description = 'Python client for iPTMNet REST API - https://research.bioinformatics.udel.edu/iptmnet/',
   author = 'Sachn Gavali',
   author_email = 'saching@udel.edu',
