@@ -145,7 +145,7 @@ def get_ptm_dependent_ppi(id, dict=None):
 
 
 def get_ppi_for_proteoforms(id, dict=None):
-    url = "{host}/{id}/proteoformppi".format(host=__host_url, id=id)
+    url = "{host}/{id}/proteoformsppi".format(host=__host_url, id=id)
     if dict is True:
         headers = {"Accept": "application/json"}
     else:
