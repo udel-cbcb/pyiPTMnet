@@ -2,3 +2,6 @@
 \venv/
 \dist/
 MANIFEST
+pyiptmnet/__pycache__/
+test/__pycache__/
+.vscode/

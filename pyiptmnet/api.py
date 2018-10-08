@@ -3,9 +3,11 @@ import requests
 import csv
 from io import StringIO
 import pandas
+from pandas.io.json import json_normalize
+import urllib3
 
-__host_url = "https://annotation.dbi.udel.edu/iptmnet/api"
-
+__host_url = "https://research.bioinformatics.udel.edu/iptmnet/api"
+urllib3.disable_warnings()
 
 def set_host_url(url):
     global __host_url
@@ -17,6 +19,9 @@ def _to_dataframe(text):
     dataframe = pandas.read_csv(data, sep=",")
     return dataframe
 
+def _to_dataframe_from_json(json):
+    dataframe = json_normalize(json)
+    return dataframe
 
 def search(search_term, term_type, role, ptm_list=None, organism_list=None, dict=None):
     if ptm_list is None:
@@ -75,8 +80,25 @@ def get_info(id, dict=None):
         result.raise_for_status()
 
 
-def get_msa(id):
-    raise NotImplementedError
+def get_msa(id,dict=None):
+    url = "{host}/{id}/msa".format(host=__host_url, id=id)
+    if dict is True:
+        headers = {"Accept": "application/json"}
+    else:
+        headers = {"Accept": "text/plain"}
+
+    result = requests.get(url, verify=False, headers=headers)
+
+    if result.status_code is 200:
+        # read the result
+        if dict is True:
+            data = json.loads(result.text)
+        else:
+            data = json.loads(result.text)
+            return data
+    else:
+        # raise the error
+        result.raise_for_status()
 
 
 def get_substrates(id, dict=None):

@@ -18,7 +18,7 @@ class IPTMnetTest(unittest.TestCase):
     # setup
     def setUp(self):
         super().setUp()
-        api.set_host_url("http://aws3.proteininformationresource.org")
+        api.set_host_url("https://research.bioinformatics.udel.edu/iptmnet/api")
 
     # test search
     def test_search(self):
@@ -132,3 +132,9 @@ class IPTMnetTest(unittest.TestCase):
     def test_get_ptm_ppi_from_file(self):
         enzymes = api.get_ptm_ppi_from_file("egfr_sites_formatted_long.txt")
         self.assertTrue(len(enzymes) != 0)
+
+    #test the msa
+    def test_msa(self):
+        alignments = api.get_msa("Q15796")
+        self.assertTrue(len(alignments) != 0)
+
