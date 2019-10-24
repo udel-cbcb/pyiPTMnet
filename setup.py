@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'pyiptmnet',
   packages = ['pyiptmnet'], # this must be the same as the name above
-  version = '0.1.3',
+  version = '0.1.4',
   description = 'Python client for iPTMNet REST API - https://research.bioinformatics.udel.edu/iptmnet/',
   long_description = "PTMnet is a bioinformatics resource for integrated understanding of protein post-translational "
                      "modifications (PTMs) in systems biology context. "
