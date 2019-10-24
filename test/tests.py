@@ -33,10 +33,10 @@ class IPTMnetTest(unittest.TestCase):
         info = api.get_info("Q15796")
         self.assertIsNotNone(info)
 
-    # test get proteoforms
+    # test get substrates
     def test_get_substrates(self):
-        proteoforms_df = api.get_substrates("Q15796")
-        self.assertTrue(len(proteoforms_df.index) != 0)
+        substrates_df = api.get_substrates("Q15796")
+        self.assertTrue(len(substrates_df.index) != 0)
 
     # test get proteoforms
     def test_get_proteoforms(self):
@@ -137,4 +137,16 @@ class IPTMnetTest(unittest.TestCase):
     def test_msa(self):
         alignments = api.get_msa("Q15796")
         self.assertTrue(len(alignments) != 0)
+
+    # test get variants
+    def test_get_variants(self):
+        variants_df = api.get_variants("Q15796")
+        self.assertTrue(len(variants_df.index) != 0)
+
+        variants_dict = api.get_variants("Q15796",dict=True)
+        self.assertTrue(len(variants_dict) != 0)
+
+
+if __name__ == '__main__':
+    unittest.main()
 

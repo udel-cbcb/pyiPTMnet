@@ -243,6 +243,27 @@ def get_ptm_ppi_from_list(items,dict=None):
         # raise the error
         result.raise_for_status()
 
+def get_variants(id, dict=None):
+    url = "{host}/{id}/variants".format(host=__host_url, id=id)
+
+    if dict is True:
+        headers = {"Accept": "application/json"}
+    else:
+        headers = {"Accept": "text/plain"}
+
+    result = requests.get(url, verify=False, headers=headers)
+
+    if result.status_code is 200:
+        # read the result
+        if dict is True:
+            data = json.loads(result.text)
+        else:
+            data = _to_dataframe(result.text)
+        return data
+    else:
+        # raise the error
+        result.raise_for_status()
+
 
 def get_stats():
     raise NotImplementedError
