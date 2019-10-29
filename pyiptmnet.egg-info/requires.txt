@@ -1,0 +1,11 @@
+certifi
+chardet
+idna
+jsonschema
+numpy
+pandas
+python-dateutil
+pytz
+requests
+six
+urllib3
