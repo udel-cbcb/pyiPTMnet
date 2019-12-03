@@ -353,4 +353,17 @@ set_host_url(url="http://localhost.com")
 |-|-|
 | __url__| URL of the iPTMnet api server|
 
+## set_api_version
+Set the Version of the iPTMnet API to use. By default the client uses - `API_VERSION.V1`
+
+#### Usage
+``` python
+set_api_version(version=API_VERSION.V1)
+```
+
+#### Arguments
+| Name | Description |
+|-|-|
+| __version__| Version of the API to use|
+
 
