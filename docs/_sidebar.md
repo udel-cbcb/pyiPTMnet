@@ -15,4 +15,4 @@
   * [get_ptm_ppi_from_list](api.md#get_ptm_ppi_from_list)
   * [get_ptm_ppi_from_file](api.md#get_ptm_ppi_from_file)
   * [set_host_url](api.md#set_host_url)
-  
+  * [set_api_version](api.md#set_api_version)
