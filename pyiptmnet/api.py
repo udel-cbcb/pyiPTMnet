@@ -5,14 +5,19 @@ from io import StringIO
 import pandas
 from pandas.io.json import json_normalize
 import urllib3
+from pyiptmnet.enums import API_VERSION
 
 __host_url = "https://research.bioinformatics.udel.edu/iptmnet/api"
 urllib3.disable_warnings()
+__selected_version = API_VERSION.V1
 
 def set_host_url(url):
     global __host_url
     __host_url = url
 
+def set_api_version(version):
+    global __selected_version
+    __selected_version = version
 
 def _to_dataframe(text):
     data = StringIO(text)
@@ -46,7 +51,7 @@ def search(search_term, term_type, role, ptm_list=None, organism_list=None, dict
         "organism": organism_list
     }
 
-    url = "{host}/search".format(host=__host_url)
+    url = "{host}/{selected_version}/search".format(host=__host_url,selected_version=__selected_version.value)
 
     if dict is True:
         headers = {"Accept": "application/json"}
@@ -68,7 +73,7 @@ def search(search_term, term_type, role, ptm_list=None, organism_list=None, dict
 
 
 def get_info(id, dict=None):
-    url = "{host}/{id}/info".format(host=__host_url, id=id)
+    url = "{host}/{selected_version}/{id}/info".format(host=__host_url,selected_version=__selected_version.value, id=id)
     result = requests.get(url, verify=False)
 
     if result.status_code is 200:
@@ -81,7 +86,7 @@ def get_info(id, dict=None):
 
 
 def get_msa(id,dict=None):
-    url = "{host}/{id}/msa".format(host=__host_url, id=id)
+    url = "{host}/{selected_version}/{id}/msa".format(host=__host_url,selected_version=__selected_version.value,id=id)
     if dict is True:
         headers = {"Accept": "application/json"}
     else:
@@ -102,7 +107,7 @@ def get_msa(id,dict=None):
 
 
 def get_substrates(id, dict=None):
-    url = "{host}/{id}/substrate".format(host=__host_url, id=id)
+    url = "{host}/{selected_version}/{id}/substrate".format(host=__host_url,selected_version=__selected_version.value, id=id)
 
     if dict is True:
         headers = {"Accept": "application/json"}
@@ -124,7 +129,7 @@ def get_substrates(id, dict=None):
 
 
 def get_proteoforms(id, dict=None):
-    url = "{host}/{id}/proteoforms".format(host=__host_url, id=id)
+    url = "{host}/{selected_version}/{id}/proteoforms".format(host=__host_url,selected_version=__selected_version.value, id=id)
 
     if dict is True:
         headers = {"Accept": "application/json"}
@@ -146,7 +151,7 @@ def get_proteoforms(id, dict=None):
 
 
 def get_ptm_dependent_ppi(id, dict=None):
-    url = "{host}/{id}/ptmppi".format(host=__host_url, id=id)
+    url = "{host}/{selected_version}/{id}/ptmppi".format(host=__host_url,selected_version=__selected_version.value, id=id)
     if dict is True:
         headers = {"Accept": "application/json"}
     else:
@@ -167,7 +172,7 @@ def get_ptm_dependent_ppi(id, dict=None):
 
 
 def get_ppi_for_proteoforms(id, dict=None):
-    url = "{host}/{id}/proteoformsppi".format(host=__host_url, id=id)
+    url = "{host}/{selected_version}/{id}/proteoformsppi".format(host=__host_url,selected_version=__selected_version.value,id=id)
     if dict is True:
         headers = {"Accept": "application/json"}
     else:
@@ -194,7 +199,7 @@ def get_ptm_enzymes_from_file(file_name,dict=None):
 
 
 def get_ptm_enzymes_from_list(items,dict=None):
-    url = "{host}/batch_ptm_enzymes".format(host=__host_url)
+    url = "{host}/{selected_version}/batch_ptm_enzymes".format(host=__host_url,selected_version=__selected_version.value)
     json_data = json.dumps(items, indent=4)
 
     if dict is True:
@@ -222,7 +227,7 @@ def get_ptm_ppi_from_file(file_name,dict=None):
 
 
 def get_ptm_ppi_from_list(items,dict=None):
-    url = "{host}/batch_ptm_ppi".format(host=__host_url)
+    url = "{host}/{selected_version}/batch_ptm_ppi".format(host=__host_url,selected_version=__selected_version.value)
     json_data = json.dumps(items, indent=4)
 
     if dict is True:
@@ -244,7 +249,7 @@ def get_ptm_ppi_from_list(items,dict=None):
         result.raise_for_status()
 
 def get_variants(id, dict=None):
-    url = "{host}/{id}/variants".format(host=__host_url, id=id)
+    url = "{host}/{selected_version}/{id}/variants".format(host=__host_url,selected_version=__selected_version.value, id=id)
 
     if dict is True:
         headers = {"Accept": "application/json"}

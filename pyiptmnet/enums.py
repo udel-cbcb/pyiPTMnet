@@ -3,6 +3,8 @@ Contains all the models required by the application
 """
 from enum import Enum
 
+class API_VERSION(Enum):
+    V1 = "v1"
 
 class Termtype(Enum):
     ALL = "All"

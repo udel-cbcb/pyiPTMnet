@@ -19,13 +19,14 @@ class IPTMnetTest(unittest.TestCase):
     def setUp(self):
         super().setUp()
         api.set_host_url("https://research.bioinformatics.udel.edu/iptmnet/api")
+        #api.set_host_url("http://127.0.0.1:8088")
 
     # test search
     def test_search(self):
-        search_results_df = api.search("smad2", Termtype.ProteinGeneName, Role.EnzymeOrSubstrate)
+        search_results_df = api.search("smad2", Termtype.ALL, Role.EnzymeOrSubstrate)
         self.assertTrue(len(search_results_df.index) != 0)
 
-        search_results_dict = api.search("smad2", Termtype.ProteinGeneName, Role.EnzymeOrSubstrate, dict=True)
+        search_results_dict = api.search("smad2", Termtype.ALL, Role.EnzymeOrSubstrate, dict=True)
         self.assertTrue(len(search_results_dict) != 0)
 
     # test get info
@@ -89,7 +90,7 @@ class IPTMnetTest(unittest.TestCase):
 
     # test get ptm enzymes from file
     def test_get_ptm_enzymes_from_file(self):
-        enzymes = api.get_ptm_enzymes_from_file("egfr_sites_formatted_long.txt",dict=True)
+        enzymes = api.get_ptm_enzymes_from_file("test/egfr_sites_formatted_long.txt",dict=True)
         len_enz = len(enzymes)
         self.assertTrue(len_enz != 0)
 
@@ -130,7 +131,7 @@ class IPTMnetTest(unittest.TestCase):
 
     # test get ptm enzymes from file
     def test_get_ptm_ppi_from_file(self):
-        enzymes = api.get_ptm_ppi_from_file("egfr_sites_formatted_long.txt")
+        enzymes = api.get_ptm_ppi_from_file("test/egfr_sites_formatted_long.txt")
         self.assertTrue(len(enzymes) != 0)
 
     #test the msa
