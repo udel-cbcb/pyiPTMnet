@@ -1,4 +1,4 @@
-PTMnet is a bioinformatics resource for integrated understanding of protein post-translational modifications (PTMs) in systems biology context. It connects multiple disparate bioinformatics tools and systems of text mining, data mining, analysis and visualization tools, and databases and ontologies into an integrated cross-cutting research resource to address the knowledge gaps in exploring and discovering PTM networks.
+iPTMnet is a bioinformatics resource for integrated understanding of protein post-translational modifications (PTMs) in systems biology context. It connects multiple disparate bioinformatics tools and systems of text mining, data mining, analysis and visualization tools, and databases and ontologies into an integrated cross-cutting research resource to address the knowledge gaps in exploring and discovering PTM networks.
 
 # Quick start
 
