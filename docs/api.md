@@ -150,6 +150,7 @@ ptm_type | substrate_uniprot_id | substrate_name | site | interactant_uniprot_id
 Phosphorylation | P49841 | GSK3B | S9 | Q15796 | SMAD2 | increased_association | eFIP | 21996745 | 
 Phosphorylation | Q15796 | SMAD2 | S467 | Q13485 | SMAD4 | association | eFIP | 9346908 | 
 
+
 ## get_ppi_for_proteoforms
 Get Protein-Protein interactions along with corresponding proteoforms for the given iPTMnet ID
 
@@ -170,15 +171,50 @@ get_ppi_for_proteoforms(id="iptmnet_id",dict=None)
 import pyiptmnet.api as api
 
 # get ppi with proteoforms
-get_ppi_for_proteoforms("Q15796",dict=None)
+api.get_ppi_for_proteoforms("Q15796",dict=None)
 ```
 
 #### Output
 protein_1_pro_id | protein_1_label | relation | protein_2_pro_id | protein_2_label | source | pmids
---- | --- | --- | --- | --- | --- | --- | --- |
+--- | --- | --- | --- | --- | --- | --- |
 PR:000025934 | hSMAD2/iso:1/Phos:1 | Interaction | PR:Q13485 | hSMAD4 | PRO | 9311995 
 PR:000025935 | hSMAD2/iso:1/Phos:2 | Interaction | PR:Q13485 | hSMAD4 | PRO | 12193595
 PR:000045371 | hSMAD2/iso:1/UnPhos:1 | Interaction | |  | PRO | 8980228
+
+
+
+## get_variants
+Get protein variants formed due to mutations from PTM events.
+
+#### Usage
+``` python
+get_variants(id="iptmnet_id",dict=None)
+```
+
+#### Arguments
+| Name | Description |
+|-|-|
+| __id__| iPTMnet ID |
+|__dict__| If `True` return results as a dictionary. Default is `false`|
+
+#### Example
+``` python
+# imports
+import pyiptmnet.api as api
+
+# Get the ptm dependent ppis
+api.get_variants("Q15796")
+```
+
+#### Output
+ac | position | residue_sequence | reasidue_mutated | disease | sample_source | | pmid
+--- | --- | --- | --- | --- | --- | --- | -- | 
+Q15796-1  |   110  |    S   |     Y    |   DOID:3571 / liver cancer       |    icgc    | NaN
+Q15796-1  |   156  |    K   |     E    |   DOID:1909 / melanoma           |    icgc    | NaN
+Q15796-1  |   156  |    K   |     E    |   DOID:1909 / melanoma           |    tcga    | NaN
+Q15796-1  |   157  |    K   |     T    |   DOID:9256 / colorectal cancer  |    tcga    | NaN
+Q15796-1  |   165  |    Y   |     *    |   DOID:10534 / stomach cancer    |    cosmic  | NaN
+
 
 
 ## get_ptm_enzymes_from_list
@@ -338,7 +374,6 @@ ptm_type | site | site_position | association_type | source | pmids | interactan
 --- | --- | --- | --- | --- | --- | --- | --- |
 Phosphorylation | S378 | 378 | association | rlimsp | 27462439 | Q92540 | SMG7 |
 Phosphorylation | S378 | 378 | increased_association | rlimsp | 22911849 | P08047 | SP1 |
-
 
 ## set_host_url
 Set the URL of the iPTMnet API server. By default the client points to the public iPTMnet api server located at - `https://annotation.dbi.udel.edu/iptmnet/api`
