@@ -83,6 +83,11 @@ Phosphorylation | S2 | 2 | 2 | HPRD | 8898866,20068231 | PRKCB | P05771 | ANXA2 
 Phosphorylation | S7 | 7 | 4 | HPRD,neXtPro | 20166139,12773393,20089855,17924679,11438671 | RPS6KA5 | O75582 | HMGN1 | P05114 
 Phosphorylation | T60 | 60 | 4 | neXtProt,PSP | 21355052,16081417 | SGK1 | O00141 | WNK1 | Q9H4A3
 
+#### Running tests
+
+```
+python -m unittest test.tests
+```
 
 ## Citations of the underlying Sources
 | \# | Name            | Publication                                                                                                                                                                                                                                                                                                                                                                                            | PubMed   |
