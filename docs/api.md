@@ -85,6 +85,38 @@ get_info("Q15697")
 }
 ```
 
+## get_substrates
+Get substrates and the corresponding PTM sites for a protein (enzyme) with a given iPTMnet ID.
+
+
+#### Usage
+``` 
+get_substrates(id="iptmnet_id",dict=None)
+```
+
+#### Arguments
+| Name | Description |
+|-|-|
+| __id__| iPTMnet ID |
+|__dict__| If `True` return results as a dictionary. Default is `false`|
+
+#### Example
+``` python
+python
+# imports
+import pyiptmnet.api as api
+
+# get proteoforms
+api.get_substrates("Q15796")
+```
+
+#### Output
+sub_form | residue | sites | ptm_type | score | sources | enzymes | pmids
+--- | --- | --- | --- | --- | --- | --- | --- |
+Q15796    | S  | S110 |  Phosphorylation | 4 |  PSP,neXtProt,Signor | CAMK2A,Q9UQM7,WNK1,Q9H4A3                |  11027280,17392271 |
+Q15796-1  | S  | S245 |  Phosphorylation | 4 |  PRO,HPRD            | MAP2K1/iso:1/Phos:1,PR:000026196         |  10197981,12193595 |
+Q15796-2  | S  | S435 |  Phosphorylation | 2 |  PRO                 | TGFBR2/iso:1/SigPep-/Phos:1,PR:000025963 |  17074756          |
+
 
 ## get_msa
 `Not implemented yet`
