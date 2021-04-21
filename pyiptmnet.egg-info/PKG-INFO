@@ -1,13 +1,13 @@
 Metadata-Version: 2.1
 Name: pyiptmnet
-Version: 0.1.6
+Version: 0.1.7
 Summary: Python client for iPTMNet REST API - https://research.bioinformatics.udel.edu/iptmnet/
 Home-page: https://github.com/udel-cbcb/pyiptmnet
 Author: Sachn Gavali
 Author-email: saching@udel.edu
 License: UNKNOWN
-Download-URL: https://github.com/udel-cbcb/pyiptmnet/archive/0.1.6.tar.gz
-Description: PTMnet is a bioinformatics resource for integrated understanding of protein post-translational modifications (PTMs) in systems biology context. It connects multiple disparate bioinformatics tools and systems of text mining, data mining, analysis and visualization tools, and databases and ontologies into an integrated cross-cutting research resource to address the knowledge gaps in exploring and discovering PTM networks.
+Download-URL: https://github.com/udel-cbcb/pyiptmnet/archive/0.1.7.tar.gz
+Description: iPTMnet is a bioinformatics resource for integrated understanding of protein post-translational modifications (PTMs) in systems biology context. It connects multiple disparate bioinformatics tools and systems of text mining, data mining, analysis and visualization tools, and databases and ontologies into an integrated cross-cutting research resource to address the knowledge gaps in exploring and discovering PTM networks.
         
         # Quick start
         
@@ -92,6 +92,11 @@ Description: PTMnet is a bioinformatics resource for integrated understanding of
         Phosphorylation | S7 | 7 | 4 | HPRD,neXtPro | 20166139,12773393,20089855,17924679,11438671 | RPS6KA5 | O75582 | HMGN1 | P05114 
         Phosphorylation | T60 | 60 | 4 | neXtProt,PSP | 21355052,16081417 | SGK1 | O00141 | WNK1 | Q9H4A3
         
+        #### Running tests
+        
+        ```
+        python -m unittest test.tests
+        ```
         
         ## Citations of the underlying Sources
         | \# | Name            | Publication                                                                                                                                                                                                                                                                                                                                                                                            | PubMed   |

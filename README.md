@@ -89,6 +89,27 @@ Phosphorylation | T60 | 60 | 4 | neXtProt,PSP | 21355052,16081417 | SGK1 | O0014
 python -m unittest test.tests
 ```
 
+#### Citation
+If you like our work and it helps you in your research, please cite us using the following citation.
+
+```
+@article{10.1093/database/baz157,
+    author = {Gavali, Sachin and Cowart, Julie and Chen, Chuming and Ross, Karen E and Arighi, Cecilia and Wu, Cathy H},
+    title = "{RESTful API for iPTMnet: a resource for protein post-translational modification network discovery}",
+    journal = {Database},
+    volume = {2020},
+    year = {2020},
+    month = {05},
+    abstract = "{iPTMnet is a bioinformatics resource that integrates protein post-translational modification (PTM) data from text mining and curated databases and ontologies to aid in knowledge discovery and scientific study. The current iPTMnet website can be used for querying and browsing rich PTM information but does not support automated iPTMnet data integration with other tools. Hence, we have developed a RESTful API utilizing the latest developments in cloud technologies to facilitate the integration of iPTMnet into existing tools and pipelines. We have packaged iPTMnet API software in Docker containers and published it on DockerHub for easy redistribution. We have also developed Python and R packages that allow users to integrate iPTMnet for scientific discovery, as demonstrated in a use case that connects PTM sites to kinase signaling pathways.}",
+    issn = {1758-0463},
+    doi = {10.1093/database/baz157},
+    url = {https://doi.org/10.1093/database/baz157},
+    note = {baz157},
+    eprint = {https://academic.oup.com/database/article-pdf/doi/10.1093/database/baz157/33205374/baz157.pdf},
+}
+```
+
+
 ## Citations of the underlying Sources
 | \# | Name            | Publication                                                                                                                                                                                                                                                                                                                                                                                            | PubMed   |
 |----|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
