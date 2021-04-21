@@ -118,9 +118,6 @@ Q15796-1  | S  | S245 |  Phosphorylation | 4 |  PRO,HPRD            | MAP2K1/iso
 Q15796-2  | S  | S435 |  Phosphorylation | 2 |  PRO                 | TGFBR2/iso:1/SigPep-/Phos:1,PR:000025963 |  17074756          |
 
 
-## get_msa
-`Not implemented yet`
-
 ## get_proteoforms
 Get proteoforms for the given iptmnet_id
 
@@ -419,6 +416,92 @@ set_host_url(url="http://localhost.com")
 | Name | Description |
 |-|-|
 | __url__| URL of the iPTMnet api server|
+
+
+## get_msa
+Get an annoted multiple sequence alignment of the proteoforms for a given iPTMnet ID
+
+#### Usage
+``` python
+get_msa(id = "iptmnet_id")
+```
+
+#### Arguments
+| Name | Description |
+|-|-|
+| __id__| iPTMnet ID |
+
+
+#### Example
+``` python
+#imports
+import pyiptmnet.api as api
+
+# get information
+api.get_msa("Q15697")
+```
+
+#### Output
+``` json
+[
+    //first proteoform
+   {
+    "id":"Q15796",
+    "sequence": [
+      {
+       "site": "M",
+       "position": 1,
+       "decorations": []
+      },
+      {
+       "site": "S", 
+       "position": 2,
+       "decorations": [
+            { 
+              "ptm_type": "Acetylation",
+              "source": [
+                  {
+                    "name": "UniProt",
+                    "label": "uniprot",
+                    "url": "http://www.uniprot.org/"
+                  }
+                ]
+            }
+        ]
+      }
+    ]
+  },
+
+  // second proteoform
+  {
+    "id":"Q15796-1",
+    "sequence": [
+      {
+       "site": "M",
+       "position": 1,
+       "decorations": []
+      },
+      {
+       "site": "S", 
+       "position": 2,
+       "decorations": [
+            { 
+              "ptm_type": "Phosphorylation",
+              "source": [
+                  {
+                    "name": "HPRD",
+                    "label": "hprd",
+                    "url": "http://www.hprd.org/"
+                  }
+                ]
+            }
+        ]
+      }
+    ]
+  }
+  
+]
+```
 
 ## set_api_version
 Set the Version of the iPTMnet API to use. By default the client uses - `API_VERSION.V1`
