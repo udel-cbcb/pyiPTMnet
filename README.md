@@ -1,4 +1,23 @@
-iPTMnet is a bioinformatics resource for integrated understanding of protein post-translational modifications (PTMs) in systems biology context. It connects multiple disparate bioinformatics tools and systems of text mining, data mining, analysis and visualization tools, and databases and ontologies into an integrated cross-cutting research resource to address the knowledge gaps in exploring and discovering PTM networks.
+
+> A simple and lightweight client library for iPTMnet.
+
+## What is it
+
+pyiPTMnet is a thin wrapper around the rest api of iPTMnet database. It makes it very easy to query iPTMnet database and integrate the results into any existing bioinformatics pipeline.    
+
+## Installation
+
+***Please not this package is only available for python 3.0+***
+
+#### Install from PyPI
+``` Python
+pip install pyiptmnet
+```
+
+#### Install from Github
+``` bash
+pip install git+https://github.com/udel-cbcb/pyiptmnet.git#egg=pyiptmnet
+```
 
 # Quick start
 
