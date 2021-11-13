@@ -2,7 +2,7 @@ iPTMnet is a bioinformatics resource for integrated understanding of protein pos
 
 # Quick start
 
-The API consists of functions that mirror the functionality of the iPTMNet rest api.
+The API consists of functions that mirror the functionality of the iPTMNet rest api. Below you can find a reference of most of the functions provided by the API.
 
 ## Info
 Retriving information for an entry with an iPTMnet ID - `Q15796`
